@@ -4,7 +4,7 @@ Minimal scratch-based docker image for a docker registry on ARM.
 
 ### Example
 ````sh
-$ docker run -d -v $PWD/vol:/var/lib/registry -p 5000:5000 \
+$ docker run -d -v /srv/registry-data:/data -p 5000:5000 \
   --restart=always --name registry silverwind/registry-armhf
 ````
 
