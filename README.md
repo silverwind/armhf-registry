@@ -1,6 +1,6 @@
 # registry-armhf
 
-Minimal [Docker Registry](https://docs.docker.com/registry/) for armhf (ARMv7), built from scratch.
+Minimal [Docker Registry](https://docs.docker.com/registry/) image for armhf (ARMv7), built from scratch. The image currently uses 11MB.
 
 ### Example
 ````sh
