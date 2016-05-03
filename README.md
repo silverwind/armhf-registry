@@ -1,6 +1,6 @@
-# silverwind/registry-armhf
+# registry-armhf
 
-Minimal scratch-based docker image for a docker registry on ARM.
+Minimal [Docker Registry](https://docs.docker.com/registry/) for armhf (ARMv7), built from scratch.
 
 ### Example
 ````sh
