@@ -1,11 +1,10 @@
-# registry-armhf
+# armhf-registry
 
-Minimal [Docker Registry](https://docs.docker.com/registry/) image for armhf (ARMv7), built from scratch. The image currently uses 11MB.
+Minimal [Docker Registry](https://docs.docker.com/registry/) image for `armhf` aka. ARMv7, built comepletely from the `scratch` image. Current image size is 11MB.
 
 ### Example
 ````sh
-$ docker run -d -v /srv/registry-data:/data -p 5000:5000 \
-  --restart=always --name registry silverwind/registry-armhf
+$ docker run -d -v /srv/registry:/data -p 5000:5000 --restart=always --name registry silverwind/armhf-registry
 ````
 
 ### Documentation

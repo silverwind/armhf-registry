@@ -1,5 +1,5 @@
 VERSION=0.1.1
-NAME=silverwind/registry-armhf
+NAME=silverwind/armhf-registry
 
 default: build
 
