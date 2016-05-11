@@ -1,6 +1,6 @@
 # armhf-registry
 
-Minimal [Docker Registry](https://docs.docker.com/registry/) image for `armhf` aka. ARMv7, built comepletely from the `scratch` image. Current image size is 11MB.
+Minimal [Docker Registry](https://docs.docker.com/registry/) image for the ARM architecutre, built completely from the `scratch` image. Current image size is 11MB. ARMv5 and up are supported.
 
 ### Example
 ````sh
