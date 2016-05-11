@@ -1,20 +1,24 @@
-VERSION=0.1.1
-NAME=silverwind/armhf-registry
+NAME = silverwind/armhf-registry
+VERSION = 0.2.0
+IS_ARM := $(shell uname -m | grep -E "^arm")
 
-default: build
+ifeq ($(IS_ARM), )
+  BINARY=$(GOPATH)/bin/linux_arm/registry
+else
+  BINARY=$(GOPATH)/bin/registry
+endif
 
-$(GOPATH)/bin/registry:
-	echo $(GOPATH)
+$(BINARY):
 	CGO_ENABLED=0 GOOS=linux GOARCH=arm GOARM=5 go get -a -ldflags '-s' github.com/docker/distribution/cmd/registry
 
-build: $(GOPATH)/bin/linux_arm/registry
-	cp $(GOPATH)/bin/linux_arm/registry .
+build: $(BINARY)
+	cp $(BINARY) .
 	docker build -t $(NAME) .
 	docker tag $(NAME) $(NAME):$(VERSION)
 
 clean:
 	rm -rf registry
-	rm -rf $(GOPATH)/bin/linux_arm/registry
+	rm -rf $(BINARY)
 
 push:
 	docker push $(NAME)
