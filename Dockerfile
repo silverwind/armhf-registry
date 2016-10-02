@@ -2,10 +2,10 @@ FROM scratch
 MAINTAINER silverwind
 
 COPY registry /registry
-COPY config.yml /config/config.yml
+COPY config.yml /config.yml
 
-VOLUME ["/data", "/config"]
+VOLUME ["/data"]
 EXPOSE 5000
 
 ENTRYPOINT ["/registry"]
-CMD ["serve", "/config/config.yml"]
+CMD ["serve", "/config.yml"]
