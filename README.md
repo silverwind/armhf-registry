@@ -4,12 +4,10 @@ Minimal [Docker Registry](https://docs.docker.com/registry/) image for the ARM a
 
 ## Example
 ````sh
-$ docker run -d -v /srv/registry:/data -p 5000:5000 --name registry silverwind/armhf-registry
+$ docker run -d -v /srv/registry/data:/data -v /srv/registry/config:/config -p 5000:5000 --name registry silverwind/armhf-registry
 ````
 
 ### Documentation
 See the [official registry documentation](https://docs.docker.com/registry/deploying/).
-
-*Note: this image was named `registry-armhf` previously.*
 
 © [silverwind](https://github.com/silverwind), distributed under BSD licence.

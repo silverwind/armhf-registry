@@ -1,5 +1,5 @@
 NAME = silverwind/armhf-registry
-VERSION = 0.2.0
+VERSION = 0.3.0
 IS_ARM := $(shell uname -m | grep -E "^arm")
 
 ifeq ($(IS_ARM), )
@@ -13,8 +13,8 @@ $(BINARY):
 
 build: $(BINARY)
 	cp $(BINARY) .
-	docker build -t $(NAME) .
-	docker tag $(NAME) $(NAME):$(VERSION)
+	docker build --no-cache=true -t $(NAME) .
+	docker tag "$$(docker images -qa $(NAME):latest)" $(NAME):$(VERSION)
 
 clean:
 	rm -rf registry
